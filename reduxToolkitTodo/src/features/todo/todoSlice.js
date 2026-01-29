@@ -1,8 +1,10 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
-    todos: [{id: 1, text: "Hello World", completed: false}]
+    todos: [{ id: 1, text: "Hello world" }]
 }
+
+
 
 export const todoSlice = createSlice({
     name: 'todo',
@@ -11,20 +13,17 @@ export const todoSlice = createSlice({
         addTodo: (state, action) => {
             const todo = {
                 id: nanoid(),
-                text: action.payload,
-                completed: false
+                text: action.payload
             }
             state.todos.push(todo)
         },
         removeTodo: (state, action) => {
-            state.todos = state.todos.filter(todo => todo.id !== action.payload)
+            state.todos = state.todos.filter((todo) => todo.id !== action.payload)
         },
         updateTodo: (state, action) => {
-            state.todos.forEach((todo) => {
-                if(todo.id === action.payload.id){
-                    todo.text = action.payload.text
-                }
-            })
+            const { id, text } = action.payload
+            const existingTodo = state.todos.find((todo) => todo.id === id)
+            if (existingTodo) existingTodo.text = text
         }
     }
 })
@@ -32,40 +31,3 @@ export const todoSlice = createSlice({
 export const { addTodo, removeTodo, updateTodo } = todoSlice.actions
 
 export default todoSlice.reducer
-
-
-
-
-
-
-
-
-
-// import {createSlice, nanoid } from '@reduxjs/toolkit';
-
-// const initialState = {
-//     todos: [{id: 1, text: "Hello world"}]
-// }
-
-
-
-// export const todoSlice = createSlice({
-//     name: 'todo',
-//     initialState,
-//     reducers: {
-//         addTodo: (state, action) => {
-//             const todo = {
-//                 id: nanoid(), 
-//                 text: action.payload
-//             }
-//             state.todos.push(todo)
-//         },
-//         removeTodo: (state, action) => {
-//             state.todos = state.todos.filter((todo) => todo.id !== action.payload )
-//         },
-//     }
-// })
-
-// export const {addTodo, removeTodo} = todoSlice.actions
-
-// export default todoSlice.reducer
