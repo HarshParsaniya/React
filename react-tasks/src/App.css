@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: auto; /* override full-viewport height to avoid large empty area */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+/* Ensure our main content doesn't force a full viewport section */
+.app-main { min-height: 0; }
+
+/* Reset any accidental full-height on html/body/root */
+html, body, #root { height: auto; }
 
 .App-link {
   color: #61dafb;

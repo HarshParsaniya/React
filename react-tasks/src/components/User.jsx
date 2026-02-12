@@ -1,8 +1,8 @@
 function User(props) {
   return (
-    <div>
-      <h2>Name: {props.name}</h2>
-      <h3>Age: {props.age}</h3>
+    <div className="card">
+      <h2>{props.name}</h2>
+      <h3 className="muted">Age: {props.age}</h3>
     </div>
   );
 }

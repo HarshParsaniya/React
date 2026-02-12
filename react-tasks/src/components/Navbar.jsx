@@ -12,7 +12,6 @@ export default function Navbar({ items = [], selected, onToggle }) {
         <button className="toggle-btn" onClick={toggle} aria-expanded={!collapsed}>
           ☰ {collapsed ? 'Show the Menu' : 'Hide the Menu'}
         </button>
-        {/* <div className="brand">Components</div> */}
       </div>
 
       {!collapsed && (

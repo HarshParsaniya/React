@@ -33,39 +33,30 @@ function App() {
     <div>
       <Navbar items={componentNames} selected={selected} onToggle={setSelected} />
 
-      <main className="app-main" style={{ padding: 12 }}>
+      <main className="app-main app-container">
         {!SelectedComponent && (
-          <div>
+          <div className="card">
             <h2>Home</h2>
-            <p>Select a component from the navbar to preview it.</p>
+            <p className="muted">Select a component from the navbar to preview it.</p>
           </div>
         )}
 
         {SelectedComponent && (
           <div>
             {selected === 'User' && (
-              <div>
-                {/* <h2>User</h2> */}
-                <User name="Harsh" age={22} />
-              </div>
+              <User name="Harsh" age={22} />
             )}
 
             {selected === 'Card' && (
-              <div>
-                {/* <h2>Cards</h2> */}
-                <div>
-                  <Card title="Python" description="Python is a Programming Language" />
-                  <Card title="Django" description="Django is a Python Framework" />
-                  <Card title="DevOps" description="DevOps is a Role" />
-                </div>
+              <div className="component-grid">
+                <Card title="Python" description="Python is a Programming Language" />
+                <Card title="Django" description="Django is a Python Framework" />
+                <Card title="DevOps" description="DevOps is a Role" />
               </div>
             )}
 
             {selected !== 'User' && selected !== 'Card' && (
-              <div>
-                {/* <h2>{selected}</h2> */}
-                <SelectedComponent />
-              </div>
+              <SelectedComponent />
             )}
           </div>
         )}

@@ -4,9 +4,9 @@ function DisplayText() {
     const name = "Harsh";
     const role = "AIML / DevOps Engineer";
     return (
-        <div>
+        <div className="card">
             <h1>My Name is {name}</h1>
-            <h2>My Role is {role}</h2>
+            <h1>My Role is {role}</h1>
         </div>
     )
 }

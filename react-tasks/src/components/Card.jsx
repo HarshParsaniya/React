@@ -1,8 +1,8 @@
 function Card(props) {
   return (
-    <div style={{border: "1px solid black", padding: "10px", margin: "10px"}}>
+    <div className="card">
       <h2>{props.title}</h2>
-      <p>{props.description}</p>
+      <p className="muted">{props.description}</p>
     </div>
   );
 }

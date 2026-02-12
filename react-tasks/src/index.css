@@ -11,3 +11,64 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #6dd3ff;
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* Global app container */
+body {
+  background-color: #071122; /* solid background to remove visible banding */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #e6eef6;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 18px 18px 36px 18px;
+}
+
+/* Card-style wrapper used across simple components */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 16px 18px;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+.card h1, .card h2, .card h3 {
+  margin: 6px 0;
+  color: #eaf5ff;
+}
+
+.muted { color: var(--muted); }
+
+.btn {
+  background: linear-gradient(90deg, #6dd3ff, #4b6cb7);
+  color: #061025;
+  border: none;
+  padding: 8px 12px;
+  margin: 6px 8px 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(75,108,183,0.18); }
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.small { font-size: 0.95rem; }
+
